@@ -20,6 +20,7 @@ function save(flightDb) {
 
 
 // @desc ---- controller to add/book a flight to the db
+// @Method --- POST
 // @route ---- /addflight
 exports.addFlight = async (req, res, next) => {
     try {
@@ -60,6 +61,7 @@ exports.addFlight = async (req, res, next) => {
 
 // ######################################
 // @desc ---- controller to get all flights
+// @Method --- GET
 // @route ---- /flights
 exports.flight = async (req, res, next) => {
     try {
@@ -75,6 +77,7 @@ exports.flight = async (req, res, next) => {
 
 // ######################################
 // @desc ---- controller to get a single flight
+// @Method --- GET
 // @route ---- /flights/:id
 exports.singleFlight = async (req, res, next) => {
     try {
@@ -93,6 +96,7 @@ exports.singleFlight = async (req, res, next) => {
 
 // ######################################
 // @desc ---- controller to edit a flight flights
+// @Method --- PATCH
 // @route ---- /flights/:id
 exports.editFlight = async (req, res, next) => {
     try {
@@ -139,6 +143,7 @@ exports.editFlight = async (req, res, next) => {
 
 // ######################################
 // @desc ---- controller to delete a flight
+// @Method --- DELETE
 // @route ---- /flights/:id
 exports.deleteFlight = async (req, res, next) => {
     try {
@@ -158,10 +163,6 @@ exports.deleteFlight = async (req, res, next) => {
         res.status(200).json({
             message: 'Flight has been deleted successfully'
         })
-        // const id = req.params.id;
-        // const flights = flightDb;
-        // let flight = flights.find(flight => flight.id === id);
-        // res.status(200).json(flight);
 
     } catch (err) {
         next(err)
